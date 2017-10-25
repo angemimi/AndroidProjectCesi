@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
     android:id="@+id/messages"
-        android:layout_below="@+id/btn"></ListView>
+        android:layout_below="@+id/btnSend"></ListView>
 
     <TextView
         android:layout_width="match_parent"
@@ -33,7 +33,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btn"
+        android:id="@+id/btnSend"
         android:layout_below="@+id/newmsg"
-        android:text=""/>
+        android:text="Send"/>
 </RelativeLayout>
