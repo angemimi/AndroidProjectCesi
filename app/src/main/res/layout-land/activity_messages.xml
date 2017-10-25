@@ -1,46 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tellier.ange_marie.tp1.MessagesActivity">
+    android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtLabel"
-        android:text="Messages"/>
-
-    <ListView
+    <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/messages"
-        android:layout_below="@+id/btnUser"></ListView>
-
-    <TextView
+        android:id="@+id/fragmentUsr"
+        class="com.tellier.ange_marie.tp1.fragment.UserFragment"
+        android:layout_weight="1"/>
+    <fragment
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/newmsgLabel"
-        android:layout_below="@+id/txtLabel"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/newmsg"
-        android:layout_below="@+id/newmsgLabel"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnSend"
-        android:layout_below="@+id/newmsg"
-        android:text="Send"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnUser"
-        android:text="Users"
-        android:layout_below="@+id/newmsg"
-        android:layout_toEndOf="@+id/btnSend" />
-</RelativeLayout>
+        android:layout_height="match_parent"
+        android:id="@+id/fragmentMsg"
+        class="com.tellier.ange_marie.tp1.fragment.MessageFragment"
+        android:layout_weight="1"/>
+</LinearLayout>

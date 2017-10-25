@@ -4,43 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tellier.ange_marie.tp1.MessagesActivity">
-
-    <TextView
+    android:orientation="vertical">
+    <fragment
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtLabel"
-        android:text="Messages"/>
+        android:layout_height="match_parent"
+        android:id="@+id/gnb"
+        class="com.tellier.ange_marie.tp1.fragment.MessageFragment"
+        android:layout_weight="1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnUser"
+            android:text="Users"
+            android:layout_below="@+id/gnb"
+            android:layout_weight="1"
+            />
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:id="@+id/messages"
-        android:layout_below="@+id/txtLabel"></ListView>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/newmsgLabel"
-        android:layout_below="@+id/messages"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/newmsg"
-        android:layout_below="@+id/newmsgLabel"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnSend"
-        android:layout_below="@+id/newmsg"
-        android:text="Send"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnUser"
-        android:text="Users"
-        android:layout_below="@+id/newmsg"
-        android:layout_toEndOf="@+id/btnSend" />
 </RelativeLayout>

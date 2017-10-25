@@ -56,7 +56,7 @@ public class SigninActivity extends AppCompatActivity {
                 Toast.makeText(SigninActivity.this, "Authenticated error", Toast.LENGTH_SHORT).show();
             } else {
                 Intent i = new Intent(SigninActivity.this, MessagesActivity.class);
-                i.putExtra("token", JSONParser.getToken(r.json));
+                Session.token = JSONParser.getToken(r.json);
                 startActivity(i);
             }
         }
