@@ -4,26 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tellier.ange_marie.tp1.HomeActivity">
+    tools:context="com.tellier.ange_marie.tp1.UsersActivity">
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txt"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:text="Users"
+        android:id="@+id/txtLabel"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="430dp"
+        android:layout_below="@+id/txtLabel"
+        android:id="@+id/usersList"></ListView>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnHello"
-        android:text="Hello"
-        android:layout_below="@+id/txt"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnPing"
-        android:layout_below="@+id/btnHello"
-        android:layout_alignParentStart="true"
-        android:text="Ping" />
+        android:id="@+id/btnMsg"
+        android:text="Messages"
+        android:layout_below="@+id/usersList" />
 
 </RelativeLayout>

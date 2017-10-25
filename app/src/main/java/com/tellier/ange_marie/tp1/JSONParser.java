@@ -1,6 +1,7 @@
 package com.tellier.ange_marie.tp1;
 
 import com.tellier.ange_marie.tp1.model.Message;
+import com.tellier.ange_marie.tp1.model.User;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,5 +36,19 @@ public class JSONParser {
         }
 
         return messages;
+    }
+
+    public static List<User> getUsers(String json) throws JSONException {
+        List<User> users = new LinkedList<>();
+        JSONArray array = new JSONArray(json);
+        JSONObject obj;
+        User usr;
+        for(int i=0; i < array.length(); i++){
+            obj = array.getJSONObject(i);
+            usr = new User(obj.optString("username"), obj.optLong("date"));
+            users.add(usr);
+        }
+
+        return users;
     }
 }

@@ -1,6 +1,7 @@
 package com.tellier.ange_marie.tp1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,6 +48,15 @@ public class MessagesActivity extends AppCompatActivity {
                 new SendMsgAsyncTask(MessagesActivity.this).execute(msg.getText().toString());
             }
         });
+
+       findViewById(R.id.btnUser).setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent i = new Intent(MessagesActivity.this, UsersActivity.class);
+               i.putExtra("token", token);
+               startActivity(i);
+           }
+       });
 
         new GetMessageAsyncTask(MessagesActivity.this).execute();
 
