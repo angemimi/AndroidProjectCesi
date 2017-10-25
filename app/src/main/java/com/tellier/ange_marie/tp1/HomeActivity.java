@@ -32,7 +32,7 @@ public class HomeActivity extends AppCompatActivity {
         findViewById(R.id.btnPing).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                //ping
+                new PingAsyncTask().execute();
             }
         });
     }
@@ -40,12 +40,28 @@ public class HomeActivity extends AppCompatActivity {
     public class HelloAsyncTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... strings){
-            if(NetworkHelper.isInternetAvailable(HomeActivity.this)){
+            if(!NetworkHelper.isInternetAvailable(HomeActivity.this)){
                 return "Error";
             }
             Map<String, String>params = new HashMap<>();
             params.put("name", strings[0]);
-            Http_result r = NetworkHelper.doGet("http://cesi.cleverapps.io/hellp", params, null);
+            Http_result r = NetworkHelper.doGet("http://cesi.cleverapps.io/hello", params, null);
+            return r.json;
+        }
+
+        @Override
+        protected void onPostExecute(String s){
+            Toast.makeText(HomeActivity.this, s, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public class PingAsyncTask extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... strings){
+            if(!NetworkHelper.isInternetAvailable(HomeActivity.this)) {
+                return "Error";
+            }
+            Http_result r = NetworkHelper.doPost("http://cesi.cleverapps.io/ping", null, null);
             return r.json;
         }
 
