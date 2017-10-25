@@ -55,7 +55,7 @@ public class SigninActivity extends AppCompatActivity {
             if(r.status != 200) {
                 Toast.makeText(SigninActivity.this, "Authenticated error", Toast.LENGTH_SHORT).show();
             } else {
-                Intent i = new Intent(SigninActivity.this, HomeActivity.class);
+                Intent i = new Intent(SigninActivity.this, MessagesActivity.class);
                 i.putExtra("token", JSONParser.getToken(r.json));
                 startActivity(i);
             }
